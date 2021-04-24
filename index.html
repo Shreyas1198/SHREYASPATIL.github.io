@@ -17,15 +17,19 @@
                  <div class="logo">
                      Portfo<span>lio.</span>
                  </div>
-                 <ul class="menu">
-                     <li><a href="#home">Home</a></li>
-                     <li><a href="#abt">About</a></li>
-                     <li><a href="#skills">Skills</a></li>
-                     <li><a href="#contact">Contact</a></li>
-                 </ul>
-                 <div class="menu-btn">
-                    <i class="fas fa-bars"></i>
-                </div>
+                 <div id="sideNav">
+                     <nav>
+                     <ul>
+                         <li><a href="#home">Home</a></li>
+                         <li><a href="#abt">About</a></li>
+                         <li><a href="#skills">Skill</a></li>
+                         <li><a href="#contact">Contact</a></li>
+                     </ul>
+                    </nav>
+                 </div>
+                 <div id="menuBtn">
+                     <img src="./Photos/menu.png" id="menu">
+                 </div>
              </div>
          </nav>
          <section class="home" id="home">
@@ -66,7 +70,7 @@
                 <div class="skill-content">
                     <div class="column left">
                         <div class="text">My Skills</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit tempora eos, modi aliquid asperiores ducimus veniam quia maxime consequuntur voluptas beatae natus possimus earum! Eaque voluptatibus in pariatur nemo exercitationem.</p>
+                            <p>I have the knowledge of HTML,CSS,Javascript and Bootstrap Frameworks.I have completed HTML and CSS certification from SOLOLEARN.</p>
                     </div>
                     <div class="column right">
                         <div class="bars">
@@ -92,7 +96,7 @@
                         </div>
                         <div class="bars">
                             <div class="info">
-                                <span>PHP</span>
+                                <span>Bootstrap</span>
                                 <span>30%</span>
                             </div>
                             <div class="line php"></div>
@@ -134,7 +138,7 @@
                                 <i class="fas fa-envelope"></i>
                                 <div class="info">
                                     <div class="head">Email</div>
-                                    <div class="sub-title">shreyaspatil097@gmail.com</div>
+                                    <a href="mailto:shreyaspatil097@gmail.com" class="sub-title">shreyaspatil097@gmail.com</a>
                                 </div>
                             </div>
                         </div>
@@ -169,14 +173,23 @@
             <span>Created By <a href="">Shreyas</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
         </footer>
        <script type="text/javascript">
-        $(window).on("scroll",function(){
-            if($(window).scrollTop()){
-                $('nav').addClass('sticky');
+        var menuBtn =  document.getElementById("menuBtn")
+        var sideNav =  document.getElementById("sideNav")
+        var menu =  document.getElementById("menu")
+        
+
+        sideNav.style.right = "-250px";
+
+        menuBtn.onclick = function(){
+            if(sideNav.style.right == "-250px"){
+                sideNav.style.right = "0";
+                menu.src = "Photos/close.png";
             }
             else{
-                $('nav').removeClass('sticky');
+                sideNav.style.right = "-250px";
+                menu.src = "Photos/menu.png";
             }
-        })
+        }
         var typed = new Typed(".typing", {
         strings: ["Developer",  "Designer", "Learner"],
         typeSpeed: 100,
